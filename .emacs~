@@ -1,0 +1,33 @@
+;; tab ではなく space を使う
+(setq-default indent-tabs-mode nil)
+;; tab 幅を 4 に設定
+(setq-default tab-width 4)
+
+;;日本語のデフォルトエンコーディングをUTF-8に
+(set-default-coding-systems 'utf-8)
+(set-buffer-file-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+
+(set-language-environment "Japanese")
+
+
+;; c-mode, c++-mode
+(add-hook 'c-mode-common-hook
+          '(lambda ()
+             ;;; K&R のスタイルを使う
+             (c-set-style "k&r")
+             ;;; インデントには tab を使う
+             ;; (setq indent-tabs-mode t)
+             ;;; インデント幅
+             (setq c-basic-offset 4)
+             ))
+
+(setq auto-mode-alist
+      ;;; 拡張子とモードの対応
+      (append
+       '(("\\.c$" . c-mode))
+       '(("\\.h$" . c-mode))
+       '(("\\.cpp$" . c++-mode))
+       auto-mode-alist))
+

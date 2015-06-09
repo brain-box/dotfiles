@@ -1,0 +1,2 @@
+;;;$Id: revive.el,v 2.19 2008/05/13 01:19:16 yuuji Exp yuuji $
+(1 (nil ((truncate-partial-width-windows) (make-backup-files . t) (version-control) (visible-bell) (file-name-history "/newtext.txt") (buffer-name-history) (minibuffer-history))) (111 35 ((0 0 59 34) (59 0 117 34)) ((nil "*GNU Emacs*" 815 1) (nil "*scratch*" 256 1))))
