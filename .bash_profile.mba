@@ -1,0 +1,16 @@
+export PATH=/Applications/TeXLive/Library/texlive/2013/bin/x86_64-darwin:$PATH
+export PATH=/Applications/TeXLive/Library/mactexaddons/bin:$PATH
+export PATH=/usr/local/sbin:/usr/local/bin:$PATH
+
+if [ -f ~/.bashrc ] ; then
+. ~/.bashrc
+fi
+
+proxy_name=http://172.16.0.2:8081
+switch_trigger=proxy
+
+if [ "`networksetup -getcurrentlocation`" = "$switch_trigger" ]; then
+   export http_proxy=$proxy_name
+   export https_proxy=$proxy_name
+   export ftp_proxy=$proxy_name
+fi
